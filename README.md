@@ -45,6 +45,17 @@ from jetcam.usb_camera import USBCamera
 camera = USBCamera(capture_device=1)
 ```
 
+### Create RTSP camera
+
+Call ``RTSPCamera`` to use a RTSP video stream.  The same parameters as ``CSICamera`` apply, along with a parameter ``capture_source`` that indicates the full rtsp stream address.
+
+```python
+from jetcam.rtsp_camera import RTSPCamera
+
+camera = RTSPCamera(width=224, height=224, capture_width=640, capture_height=480, capture_source='rtsp://10.42.0.161:5540/ch0')
+```
+
+
 ### Read
 
 Call ``read()`` to read the latest image as a ``numpy.ndarray`` of data type ``np.uint8`` and shape ``(224, 224, 3)``.  The color format is ``BGR8``.
@@ -101,6 +112,13 @@ These cameras work with the [``USBCamera``](jetcam/usb_camera.py) class.  Try th
 | Model | Infared | FOV | Resolution | Cost | 
 |:-------|:-----:|:---:|:---:|:----:|
 | [Logitech C270](https://www.amazon.com/Logitech-Widescreen-designed-Calling-Recording/dp/B004FHO5Y6) |  | 60 | 1280x720 | $18 | 
+
+### RTSP streams
+
+Some example stream : https://github.com/grigory-lobkov/rtsp-camera-view/issues/3
+
+Android RTSP server app: https://play.google.com/store/apps/details?id=veg.mediacapture.sdk.test.server&hl=en
+
 
 ## See also
 
