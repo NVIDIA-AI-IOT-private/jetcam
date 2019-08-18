@@ -28,15 +28,18 @@ Below we show some usage examples.  You can find more in the [notebooks](noteboo
 ### Create CSI camera
 
 Call ``CSICamera`` to use a compatible CSI camera.  ``capture_width``, ``capture_height``, and ``capture_fps`` will control the capture shape and rate that images are aquired. ``width`` and ``height`` control the final output shape of the image as returned by the ``read`` function.
-``capture_flip`` allows the image to be flipped or rotated.
-Identity - no rotation (default) 0
-Counterclockwise - 90 degrees 1
-Rotate - 180 degrees 2
-Clockwise - 90 degrees 3
-Horizontal flip 4
-Upper right diagonal flip 5
-Vertical flip 6
-Upper-left diagonal 7
+``capture_flip`` allows the image to be flipped or rotated using the following codes.
+
+| Type | Specific | Code |
+|:-------|:-----:|:---:|
+| Identity | no rotation (default)| 0|
+| Rotate | Counterclockwise 90 degrees| 1|
+|Rotate | 180 degrees| 2|
+|Rotate| Clockwise 90 degrees| 3|
+|Flip| Horizontal flip| 4|
+|Flip| Upper right diagonal flip| 5|
+|Flip|Vertical flip| 6|
+|Flip|Upper-left diagonal| 7|
 
 ```python
 from jetcam.csi_camera import CSICamera
