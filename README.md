@@ -37,7 +37,7 @@ camera = CSICamera(width=224, height=224, capture_width=1080, capture_height=720
 
 ### Create USB camera
 
-Call ``USBCamera`` to use a compatbile USB camera.  The same parameters as ``CSICamera`` apply, along with a parameter ``capture_device`` that indicates the device index.  You can check the device index by calling ``ls /dev/video*``.
+Call ``USBCamera`` to use a compatible USB camera.  The same parameters as ``CSICamera`` apply, along with a parameter ``capture_device`` that indicates the device index.  You can check the device index by calling ``ls /dev/video*``.
 
 ```python
 from jetcam.usb_camera import USBCamera
@@ -62,7 +62,7 @@ image = camera.value
 
 ### Callback
 
-You can also set the camera to ``running = True``, which will spawn a thread that acquires images from the camera.  These will update the camera's ``value`` attribute automatically.  You can attach a callback to the value using the [traitlets](https://traitlets.readthedocs.io/en/stable/api.html#callbacks-when-trait-attributes-change) library.  This will call the callback with the new camera value as well as the old camera value
+You can also set the camera to ``running = True``, which will spawn a thread that acquires images from the camera.  These will update the camera's ``value`` attribute automatically.  You can attach a callback to the value using the [traitlets](https://traitlets.readthedocs.io/en/stable/api.html#callbacks-when-trait-attributes-change) library.  This will call the callback with the new camera value as well as the old camera value.
 
 ```python
 camera.running = True
